@@ -1,9 +1,10 @@
 === WP FullCalendar ===
 Contributors: netweblogic, mikelynn
 Tags: calendar, calendars, jQuery calendar, ajax calendar, event calendars, events calendar
+Text Domain: wp-fullcalendar
 Requires at least: 3.6
-Tested up to: 4.2.1
-Stable tag: 1.0
+Tested up to: 4.4
+Stable tag: 1.1
 
 Uses the jQuery FullCalendar plugin to create a stunning calendar view of events, posts and other custom post types
 
@@ -47,6 +48,13 @@ Here's a rough roadmap of where we're heading, and will be ammended as time perm
 Install this plugin like a normal WordPress plugin. Once activated, you'll see a new panel in the Settings section for editing the options for calendar display.
 
 == Changelog ==
+= 1.1 =
+* fixed EM 5.6.2 conflict,
+* fixed "undefined 'type'" PHP warning
+* partial fix for arabic not showing events (item times will still show roman numerals)
+* fixed languages with long locales (Chinese Dialects, Portuguese Brazilian) not translating properly
+* updated to FullCalendar library 2.5.0
+
 = 1.0 =
 * switched to FullCalendar 2.x library
 * changed plugin textdomain so it adheres to upcoming wordpress.org plugin translation features

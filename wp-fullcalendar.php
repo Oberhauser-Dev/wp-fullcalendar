@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WP FullCalendar
-Version: 1.0
+Version: 1.1
 Plugin URI: http://wordpress.org/extend/plugins/wp-fullcalendar/
 Description: Uses the jQuery FullCalendar plugin to create a stunning calendar view of events, posts and eventually other CPTs. Integrates well with Events Manager
 Author: Marcus Sykes
@@ -22,7 +22,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 */
 
-define('WPFC_VERSION', '1.0.3');
+define('WPFC_VERSION', '1.1');
 define('WPFC_UI_VERSION','1.11'); //jQuery 1.11.x
 
 class WP_FullCalendar{
@@ -49,8 +49,8 @@ class WP_FullCalendar{
 		//base arguments
 		self::$args['type'] = get_option('wpfc_default_type','event');
 		//START Events Manager Integration - will soon be removed
-		if( defined('EM_VERSION') && EM_VERSION <= 5.61 ){
-		    if( !empty($_REQUEST['action']) && $_REQUEST['action'] = 'WP_FullCalendar' && $_REQUEST['type'] == EM_POST_TYPE_EVENT ){
+		if( defined('EM_VERSION') && EM_VERSION <= 5.62 ){
+		    if( !empty($_REQUEST['action']) && $_REQUEST['action'] = 'WP_FullCalendar' && !empty($_REQUEST['type']) && $_REQUEST['type'] == EM_POST_TYPE_EVENT ){
 		        //reset the start/end times for Events Manager 5.6.1 and less, to avoid upgrade-breakages
 		        $_REQUEST['start'] = $_POST['start'] = strtotime($_REQUEST['start']); //maybe excessive, but easy sanitization
 		        $_REQUEST['end'] = $_POST['end'] = strtotime($_REQUEST['end']);
@@ -304,7 +304,7 @@ class WP_FullCalendar{
 		<script type='text/javascript'>
 		<?php 
 		  include('includes/js/inline.js');
-		  $locale_code = str_replace('_','-', get_locale());
+		  $locale_code = strtolower(str_replace('_','-', get_locale()));
 		  $file_long = dirname(__FILE__).'/includes/js/lang/'.$locale_code.'.js';
 		  $file_short = dirname(__FILE__).'/includes/js/lang/'.substr ( $locale_code, 0, 2 ).'.js';
 		  if( file_exists($file_short) ){
