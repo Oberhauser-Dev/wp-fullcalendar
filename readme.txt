@@ -12,7 +12,7 @@ Uses the jQuery FullCalendar plugin to create a stunning calendar view of events
 
 [FullCalendar](http://arshaw.com/fullcalendar/ "jQuery Calendar Plugin") is a free open source jQuery plugin by Adam Arshaw which generates a stunning calendar populated with your events.
 
-This plugin combines the power of FullCalendar and WordPress to present your posts or any other custom post type in a calendar format, which can be filtered by custom taxonomies such as categories and tags.
+This plugin combines the power of FullCalendar 2.x and WordPress to present your posts or any other custom post type in a calendar format, which can be filtered by custom taxonomies such as categories and tags.
 
 [Demo - See it in action](http://demo.wp-events-plugin.com/calendar/ "Events Manager Calendar Plugin")
 
@@ -36,7 +36,6 @@ This plugin combines the power of FullCalendar and WordPress to present your pos
 
 Here's a rough roadmap of where we're heading, and will be ammended as time permits
 
-* Transition to the FullCalendar 2 JS framework (will be added to WP Fullcalendar 1.0 in coming weeks)
 * Move away from using qTips (or make as an alternative) and use jQuery UI tooltips instead
 * Add more native FullCalendar options to the settings page
 * Add formats for custom post types (currently only possible with Events Manager)
