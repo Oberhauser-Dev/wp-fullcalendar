@@ -87,7 +87,7 @@ class WP_FullCalendar{
     		    //We'll find the current jQuery UI version and attempt to load the right version of jQuery UI, otherwise we'll load the default. This allows backwards compatability from 3.6 onwards.
         	    global $wp_scripts;
         	    $jquery_ui_version = preg_replace('/\.[0-9]+$/', '', $wp_scripts->registered['jquery-ui-core']->ver);
-        	    if( $jquery_ui_version != WPFC_UI_VERSION ){
+        	    if( !empty($jquery_ui_version) && $jquery_ui_version != WPFC_UI_VERSION ){
             	    $jquery_ui_css_versions = glob( $plugin_path = plugin_dir_path(__FILE__)."/includes/css/jquery-ui-".$jquery_ui_version.'*', GLOB_ONLYDIR);
         		    if( !empty($jquery_ui_css_versions) ){
         		        //use backwards compatible theme
